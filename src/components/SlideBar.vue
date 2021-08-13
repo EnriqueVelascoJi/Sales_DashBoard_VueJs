@@ -89,43 +89,24 @@
             app
             v-model="drawer"
             mini-variant
-            mini-variant-width="122"
+            mini-variant-width="128"
             color="#23262D"
         >
             <v-list>
                 <v-list-item-group color="cyan">
                     <v-list-item class="mb-4">
                         <v-list-item-content align="center">
-                            <v-icon align="center">
-                                fas fa-tv                                
-                            </v-icon>
-                        </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                <v-list-item-group color="cyan">
-                    <v-list-item class="mb-4">
-                        <v-list-item-content align="center">
                             <v-icon align="center" x-large>
                                 fas fa-tv                                
                             </v-icon>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list-item-group>
-                <v-list-item-group color="cyan">
-                    <v-list-item class="mb-4">
+                <v-list-item-group v-model="selectedItem" color="cyan">
+                    <v-list-item v-for="(item, index) in items" :key="index">
                         <v-list-item-content align="center">
-                            <v-icon align="center" x-large>
-                                fas fa-tv                                
-                            </v-icon>
-                        </v-list-item-content>
-                    </v-list-item>
-                </v-list-item-group>
-                <v-list-item-group color="cyan">
-                    <v-list-item class="mb-4">
-                        <v-list-item-content align="center">
-                            <v-icon align="center" x-large>
-                                fas fa-tv                                
-                            </v-icon>
+                            <v-icon v-text="item.icon" class="mb-3" align="center"></v-icon>
+                            <v-list-item-subtitle v-text="item.text" align="center" class="caption"></v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list-item-group>
