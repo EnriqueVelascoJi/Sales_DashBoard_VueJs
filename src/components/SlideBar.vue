@@ -9,7 +9,7 @@
             >
             <v-chip
                 class="ma-2"
-                color="green darken-1"
+                color="grey darken"
                 pill
             >Dashboard
                 <v-icon
@@ -23,7 +23,7 @@
             </v-chip>
             <v-chip
                 class="ma-2"
-                color="green darken-1"
+                color="grey darken"
                 pill
             >Reports
                 <v-icon
@@ -37,7 +37,7 @@
             </v-chip>
             <v-chip
                 class="ma-2"
-                color="green darken-1"
+                color="grey darken"
                 pill
             >Orders
                 <v-icon
@@ -75,9 +75,11 @@
                 fab
                 color="orange"
                 elevation="0"
+                @click="drawer = !drawer"
             >
                 <v-icon
                     color="white"
+                    
                 >  
                     fas fa-bars
                 </v-icon>    
@@ -120,13 +122,13 @@
 export default {
     data() {
         return {
-            drawer: null,
+            drawer: true,
             selectedItem: 0,
             items: [
                 {text: 'DASHBOARD', icon: 'fas fa-tachometer-alt'},
                 {text: 'REPORTS', icon: 'fas fa-file-alt'},
                 {text: 'STOCK', icon: 'fas fa-chart-line'},
-                {text: 'DEVICE SALES', icon: 'fas fa-fa-table'},
+                {text: 'DEVICE SALES', icon: 'fas fa-table'},
                 {text: 'DASHBOADR', icon: 'fas fa-user-tag'},
                 {text: 'SETTINGS', icon: 'fas fa-cogs'},
             ]

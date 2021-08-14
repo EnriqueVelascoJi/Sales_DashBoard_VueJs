@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-container>
-      <v-row>
+      <v-row class="mt-2">
         <v-col cols="12" sm="3">
           <v-card color="#23262D" elevation="10">
             <v-row>
@@ -139,6 +139,43 @@
                 <v-icon right small color="cyan">fas fa-chevron-circle-down</v-icon>
               </v-chip>
             </v-app-bar>
+            <v-data-table :headers="headers" :items="desserts" class="dattab">
+              <template v-slot:item.glutenfree="{item}">
+                <v-simple-checkbox v-model="item.glutenfree" color="cyan"></v-simple-checkbox>
+              </template>
+              <template v-slot:item.action="">
+                <v-icon small>mdi-pencil</v-icon>
+              </template>
+            </v-data-table>
+          </v-card>
+        </v-col>
+        <v-col cols="12" sm="5">
+          <v-card color="#23262D">
+            <v-app-bar color="rgba(0, 0,0, 0)" flat>
+              <v-toolbar-title class="grey--text title">
+                Support Tickets
+              </v-toolbar-title>
+            </v-app-bar>
+              <v-list three-line class="mt-5" color="#23262D">
+                <v-list-item-group>
+                  <template v-for="(item) in files">
+                    <v-list-item :key="item.title">
+                      <v-list-item-avatar>
+                        <img :src="item.avatar">
+                      </v-list-item-avatar>
+                      <template>
+                        <v-list-item-content>
+                          <v-list-item-title v-html="item.title"></v-list-item-title>
+                          <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
+                        </v-list-item-content>
+                      </template>
+                      <v-list-item-action>
+                        <v-btn v-text="item.action" rounded color="cyan" small></v-btn>
+                      </v-list-item-action>
+                    </v-list-item>
+                  </template>
+                </v-list-item-group>
+              </v-list>
           </v-card>
         </v-col>
       </v-row>
@@ -218,11 +255,27 @@
         ],
         files: [
           {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+            avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
             action: 'Open',
             headline: 'Birthday gift',
             subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
+            title: '<strong>Trevoir Hansen</strong>'
+
+          },
+          {
+            avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+            action: 'Open',
+            headline: 'Birthday gift',
+            subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
+            title: '<strong>Trevoir Hansen</strong>'
+
+          },
+          {
+            avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+            action: 'Open',
+            headline: 'Birthday gift',
+            subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
+            title: '<strong>Trevoir Hansen</strong>'
 
           },
           {
@@ -230,41 +283,17 @@
             action: 'Open',
             headline: 'Birthday gift',
             subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
+            title: '<strong>Trevoir Hansen</strong>'
 
           },
           {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+            avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
             action: 'Open',
             headline: 'Birthday gift',
             subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
+            title: '<strong>Trevoir Hansen</strong>'
 
-          },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-            action: 'Open',
-            headline: 'Birthday gift',
-            subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
-
-          },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-            action: 'Open',
-            headline: 'Birthday gift',
-            subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
-
-          },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-            action: 'Open',
-            headline: 'Birthday gift',
-            subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-            titlw: '<strong>Trevoir Hansen</strong>'
-
-          },
+          }
         ]
       }
     }
